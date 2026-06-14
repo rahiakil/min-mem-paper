@@ -8,5 +8,6 @@ build/
 
 # Keep final paper PDF and figure PDFs tracked
 !min-mem-lexical-minification.pdf
+!min-mem-presentation.html
 !figures/*.pdf
 !generated/stats.tex

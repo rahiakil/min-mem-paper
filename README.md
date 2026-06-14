@@ -15,7 +15,21 @@ cd ../min-mem-paper
 make paper
 ```
 
-Output: `min-mem-lexical-minification.pdf`
+Output: `min-mem-lexical-minification.pdf` (6 pages)
+
+## Presentation (Marp)
+
+Slides live in Obsidian: `~/obsidian2nd/Second Brain/min-mem/Min-Mem - Paper Summary.md`
+
+```bash
+# HTML (no Chrome required)
+marp --no-stdin "path/to/Min-Mem - Paper Summary.md" -o min-mem-presentation.html
+
+# PDF (requires Chrome/Chromium)
+marp --no-stdin "path/to/Min-Mem - Paper Summary.md" --pdf -o min-mem-presentation.pdf
+```
+
+Pre-built: `min-mem-presentation.html`
 
 ## Structure
 
