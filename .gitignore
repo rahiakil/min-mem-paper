@@ -1,0 +1,12 @@
+build/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Keep final paper PDF and figure PDFs tracked
+!min-mem-lexical-minification.pdf
+!figures/*.pdf
+!generated/stats.tex
