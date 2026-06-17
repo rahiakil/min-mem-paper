@@ -227,6 +227,26 @@ Raw content-word Jaccard similarity underestimates preservation under synonym su
     \label{fig:semantic}
 \end{figure}
 
+\subsection{Dictionary Ablation}
+
+We benchmark progressive tiers of the min dictionary: phrases only, then connectors, verbs, and adjectives/other (Figure~\ref{fig:ablation}). Phrase rules alone yield \AblationPhrase\% savings from just 7 entries; the full \DictSize{}-entry dictionary reaches \MinMemCharSavings\%. Most gains come from single-word synonyms after phrases saturate.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/fig_dictionary_ablation.pdf}
+    \caption{Character reduction as min dictionary tiers grow.}
+    \label{fig:ablation}
+\end{figure}
+
+Figure~\ref{fig:swaps} shows the highest-impact replacements. \emph{utilize}$\rightarrow$\emph{use}, \emph{in order to}$\rightarrow$\emph{to}, and \emph{previously}$\rightarrow$\emph{before} dominate---validating corpus-driven dictionary curation.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.95\linewidth]{figures/fig_top_swaps.pdf}
+    \caption{Top replacement rules by corpus frequency.}
+    \label{fig:swaps}
+\end{figure}
+
 \subsection{Tokenization Gap}
 
 Character savings (\MinMemCharSavings\%) substantially exceed token savings (\MinMemTokenSavings\%). Subword tokenizers (BPE) often assign similar token counts to polysyllabic and monosyllabic English words. \textbf{Implication:} billing models priced per token gain less than storage models priced per byte. Future dictionaries should optimize for token count, not character count.
